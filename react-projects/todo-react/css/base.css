@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.wrapper {
+  width: 550px;
+  margin: 0 auto;
+}
+.login-wrapper {
+  width: 100%;
+  font-family: arial;
+  margin: 10px 0px 10px 0px;
+}
+.login-wrapper label {
+  margin: 10px 0px 10px 0px;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+}
+.login-wrapper input {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 0px 10px 0px;
+  background-color: #ffffff;
+  border: 1px solid #aeaeae;
+}
+.inline {
+  display: inline;
+}
+.todo-wrapper {
+  padding: 0px 10px 0px 10px;
+  border-bottom: 1px solid #ffffff;
+  background-color: #eeeeee;
+}
+.todo-wrapper p {
+  font-size: 14px;
+  padding: 10px 5px 10px 5px;
+  margin: 0px 3px 0px 3px;
+  font-family: arial;
+}
+.todo-wrapper button {
+  width: 60px;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid transparent;
+  height: 34px;
+  color: #ffffff;
+}
+.todo-wrapper button:nth-child(1) {
+  background-color: #ff4a73;
+}
+.todo-wrapper button:nth-child(2) {
+  background-color: #9bd54d;
+}
+.todo-wrapper div:nth-child(2) {
+  width: 360px;
+  display: inline-block;
+}
+.form-wrapper {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+.form-wrapper form {
+  width: 100%;
+}
+.form-wrapper button {
+  width: 80px;
+  font-size: 14px;
+  padding: 10px 5px 10px 5px;
+  background-color: #ffffff;
+  border: 1px solid #aeaeae;
+  margin: 0px 3px 0px 3px;
+}
+.grey-blue {
+  background-color: #404b51;
+  color: #ffffff;
+}
+.form-wrapper input[type=text] {
+  width: 390px;
+  font-size: 14px;
+  padding: 10px 5px 10px 5px;
+  background-color: #ffffff;
+  border: 1px solid #aeaeae;
+  margin: 0px 3px 0px 3px;
+}
+input[type=checkbox] {
+  margin: 10px;
+}
+.todo-wrapper:hover .actions {
+  opacity: 1;
+}
+.actions {
+  opacity: 0.9;
+}
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #aeaeae;
+  margin: 10px 0px 10px 0px;
+}
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.flex-container {
+	width: 100%;
+}
+.todos {
+	height: 80vh;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border-top: 1px solid #ffffff;
+}

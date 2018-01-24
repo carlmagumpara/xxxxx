@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CLI - Carl Anthony Magumpara. 2017</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    /*Reset*/
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol, ul {
+      list-style: none;
+    }
+    blockquote, q {
+      quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    body {
+      background-color: #000;
+      min-height: 100vh;
+      width: 100%;
+      color: #fff;
+    }
+    .data-entry {
+      background-color: transparent;
+      border: 0px;
+      outline: none;
+      display: inline;
+      padding: 0px;
+      margin: 0px;
+      color: #fff;
+    }
+    .data_results {
+      margin: 1px 0px 3px 0px;
+    }
+    .carl-root, .data_results, .data-entry, .error {
+      font-size: 16px;
+      font-family: Courier New, Courier, monospace;
+      text-align:justify;
+      letter-spacing: .7px;
+    }
+    .carl-root::before {
+      content: '$ '
+    }
+    .link {
+      color: #fff;
+      text-decoration: none;
+    }
+    .error::before {
+      content: 'Error: ';
+      color: red;
+    }
+    .error::after {
+      content: 'command not found';
+      color: #fff;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
+</head>
+<body>
+  <div id="cli">
+    <div class="date_results_container">
+      <div class="data_results" v-for="data in data_results" v-html="data.data"></div>
+    </div>
+    <form @submit.prevent="processData">
+      <span class="carl-root"></span>
+      <input type="text" name="data-entry" class="data-entry" v-model="data_entry" autocomplete="off" @keyup.up="showHistoryUp" @keyup.down="showHistoryDown" @keyup="storeDataEntry" autofocus>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="bower_components/vue/dist/vue.min.js"></script>
+  <style type="text/css">
+    body {
+      padding-top: 70px;
+    }
+    .search-container {
+      width: 100%;
+    }
+    .search-container a, .no-result div {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+      display: block;
+      text-decoration: none;
+      color: #000000;
+      background-color: #ffffff;
+    }
+    .search-container a:hover, .search-container a:focus, .search-container a:active {
+      background-color: #eeeeee;
+    }
+    .search-parent {
+      position: relative;
+      height: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#client" aria-controls="client" role="tab" data-toggle="tab">Client</a></li>
+          <li role="presentation"><a href="#lawyer" aria-controls="lawyer" role="tab" data-toggle="tab">Lawyer</a></li>
+          <li role="presentation" style="visibility: hidden;">
+            <a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a>
+          </li>
+          <li role="presentation" style="visibility: hidden;">
+            <a href="#view" aria-controls="view" role="tab" data-toggle="tab">Search</a>
+          </li>
+          <li role="presentation" class="pull-right">
+            <form @submit.prevent="true">
+              <div class="form-group search-parent">
+                <div class="search-container">
+                  <input type="search" style="width: 500px;" name="" class="form-control search-form" placeholder="Search question..." @keyup="searchQuestion" v-model="searchInput" @keyup.40="arrowDown(event)" @focus="searchFocus" @blur="searchFocusOut" @focusout="searchFocusOut">
+                  <a href="#" style="width: 500px;" v-bind:search-id="live.id" v-for="live in liveSearch" @click="showResult(live)" @keyup.38="arrowUp(event)" @keyup.40="arrowDown(event)">{{ boldTxt(live.q, searchInput, live.id) }}</a>
+                  <div class="no-result hide">
+                    <div v-if="liveSearch.length == 0">
+                      No result found for "{{ searchInput }}"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="client">
+            Client
+            <div class="row">
+              <div class="col-md-6">
+                <div class="list-group">
+                  <a href="#" class="list-group-item" v-for="q in questions" @click="showQuestion(q)">
+                    {{ q.q }}
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-group">
+                  <a href="#" class="list-group-item" v-for="q in questions" @click="showQuestion(q)">
+                    {{ q.q }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="lawyer">
+            Lawyer
+            <div class="row">
+              <div class="col-md-6">
+                <div class="list-group">
+                  <a href="#" class="list-group-item" v-for="q in questions" @click="showQuestion(q)">
+                    {{ q.q }}
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-group">
+                  <a href="#" class="list-group-item" v-for="q in questions" @click="showQuestion(q)">
+                    {{ q.q }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade in" id="search">
+            <ol class="breadcrumb">
+              <li><a href="#" class="type"></a></li>
+              <li><a href="#" class="category"></a></li>
+              <li><a href="#" class="question active"></a></li>
+            </ol>
+            <h3 class="question"></h3>
+            <p class="answer"></p>
+          </div>
+          <div role="tabpanel" class="tab-pane fade in" id="view">
+            <ol class="breadcrumb">
+              <li><a href="#" class="type"></a></li>
+              <li><a href="#" class="category"></a></li>
+              <li><a href="#" class="question active"></a></li>
+            </ol>
+            <h3 class="question"></h3>
+            <p class="answer"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
